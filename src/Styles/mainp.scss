@@ -1,64 +1,92 @@
 .main-project {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  min-height: 100vh;
+  height: auto;
+  @include flex-layout(column, space-around);
+  margin: 2rem 0;
   .title {
     width: 100%;
-    position: absolute;
-    top: -30px;
-    z-index: 100;
     display: block;
-    svg {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 250px;
-    }
-    h3 {
-      position: absolute;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    @include flex-layout();
+    img{
       width: 100%;
-      text-align: center;
-      left: 50%;
-      top: 5rem;
-      transform: translateX(-50%);
-      color: #6f5346;
-      font-family: "Chelsea Market", sans-serif;
-      font-size: 72px;
-      z-index: 10;
+      height: auto;
+      max-width: 1000px;
     }
   }
   .item-wrap {
     width: 90%;
-    margin: 0 auto;
     display: grid;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    @include mobile{
+      grid-template-columns: repeat(1, 1fr);
+      width: 95%;
+    }
     .item {
-      @include flex-layout(row, space-between);
+      @include flex-layout(row, space-between,stretch);
       background-color: #fff;
       border-radius: 24px;
       padding: 20px;
-      
+      gap: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover{
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+      }
+      @include tablet{
+        flex-direction: column;
+        align-items: center;
+      }
       .left {
-        img{
-          width: 350px;
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include tablet{
+          align-items:center;
+          justify-content: center;
+        }
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          
         }
       }
       .right {
-        p{
-          color: #6f5346;
-          font-size: 32px;
-          font-weight: 800;
-          &:nth-child(2){
-            font-size: 24px;
-            font-weight: 600;
+        flex: 1;
+        @include flex-layout(column, space-between);
+        .txt-wrap {
+          p {
+            color: #6f5346;
+            font-size: 32px;
+            font-weight: 800;
+            @include tablet{
+              font-size: 28px;
+            }
+            &:nth-child(2) {
+              font-size: 24px;
+              font-weight: 600;
+              @include tablet{
+              font-size: 20px;
+            }
+            }
           }
         }
+
         .icon-list {
           @include flex-layout(row, flex-end);
+          width: 100%;
           gap: 0.5rem;
-          margin-top: 0.5rem;
+          flex-wrap: wrap;
+          @include tablet{
+            justify-content: center;
+
+          }
         }
       }
     }

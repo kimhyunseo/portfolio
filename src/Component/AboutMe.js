@@ -1,18 +1,48 @@
-import { ReactComponent as Title } from "../svg/title.svg";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { ReactComponent as Dubble } from "../svg/dubble.svg";
 
 import { FaBook } from "react-icons/fa";
 import { IoIosBaseball } from "react-icons/io";
 import { TbPlayCardStarFilled } from "react-icons/tb";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutMe = () => {
+  const titleRef = useRef(null);
+  const infoRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top 50%", // 타이틀이 화면에 80% 올라왔을 때 시작
+      }
+    });
+
+    // 타이틀 등장
+    tl.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+    )
+    // info-wrap 등장
+    .fromTo(
+      infoRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 },
+      "-=0.4" // 타이틀 끝나기 전 조금 겹치게 시작
+    );
+  }, []);
+
   return (
     <div className='aboutme'>
-      <div className='title'>
-        <h3>ABOUT ME</h3>
-        <Title />
+      <div className='title' ref={titleRef}>
+        <img src={`${process.env.PUBLIC_URL}/images/aboutme.png`}/>
       </div>
-      <div className="info-wrap">
+      <div className="info-wrap" ref={infoRef}>
         <div className="character">
           <img src={`${process.env.PUBLIC_URL}/images/character.png`} alt="고양이"/>
         </div>
@@ -66,14 +96,9 @@ const AboutMe = () => {
                   <p>2025</p>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
   );

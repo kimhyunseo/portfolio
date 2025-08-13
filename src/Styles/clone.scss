@@ -1,0 +1,62 @@
+.clone {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  @include flex-layout(column, space-around);
+  margin: 2rem 0;
+  .title {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    @include flex-layout();
+    img{
+      width: 100%;
+      height: auto;
+      max-width: 1000px;
+    }
+  }
+  .item-wrap{
+    .item{
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      img{
+        transition: all 0.3 ease;
+      }
+        &:hover{
+          img{
+            transform: scale(1.5);
+          }
+        }
+      .txt-wrap{
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flex-layout();
+        color: #fff;
+        z-index: 10;
+        gap: 10px;
+        text-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.5);
+        
+        .left{
+          p{
+            font-weight: 900;
+            font-size: 90px;
+          }
+        }
+        .right{
+          p{
+            font-weight: 800;
+            font-size: 50px;
+            &:nth-child(2){
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
