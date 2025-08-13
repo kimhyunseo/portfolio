@@ -1,0 +1,199 @@
+.aboutme {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #325029;
+  @include tablet{
+    height: 110vh;
+  }
+  .title {
+    width: 100%;
+    position: absolute;
+    top: -30px;
+    z-index: 100;
+    display: block;
+    svg {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 550px;
+      height: 250px;
+    }
+    h3 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 50%;
+      top: 5rem;
+      transform: translateX(-50%);
+      color: #6f5346;
+      font-family: "Chelsea Market", sans-serif;
+      font-size: 72px;
+      z-index: 10;
+    }
+  }
+  .info-wrap {
+    position: absolute;
+    width: 80%;
+    max-width: 1600px;
+    min-height: 700px;
+    margin: 0 auto;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    border: 15px solid #dbba85;
+    box-shadow: 0 15px 0 #897047;
+    @include flex-layout(row);
+    gap: 20px;
+    @include tablet {
+      flex-direction: column;
+      padding: 1rem;
+      width: 95%;
+    }
+    @include mobile{
+      top: 55%;
+    }
+    
+    .character {
+      width: 60%;
+      max-width: 450px;
+      @include tablet{
+        max-width: 300px;;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .right {
+      @include flex-layout(column,space-around);
+      width: 850px;
+      height: 100%;
+      gap: 40px;
+      @include tablet {
+        width: 100%;
+        gap: 10px;
+      }
+      .top {
+        @include flex-layout(column);
+        gap: 20px;
+
+        .bubble {
+          @include flex-layout(row, center, flex-start);
+          gap: 5px;
+          background-color: #ffffff;
+          padding: 10px 16px;
+          border-radius: 20px;
+
+          p {
+            color: #6f5346;
+            font-size: 64px;
+            font-weight: 900;
+            @include tablet {
+              font-size: 40px;
+            }
+          }
+          svg {
+            @include tablet {
+              height: 10px;
+            }
+          }
+          svg:nth-child(1) {
+            transform: scaleX(-1);
+          }
+        }
+        p {
+          color: #6f5346;
+          font-size: 32px;
+          font-weight: 700;
+          text-align: center;
+          word-break: keep-all;
+          @include tablet {
+            font-size: 27px;
+          }
+          span {
+            color: #009c05;
+            font-size: 35px;
+            font-weight: 900;
+            word-break: keep-all;
+            @include tablet {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+      .bottom {
+        @include flex-layout(row, space-between, flex-start);
+        width: 100%;
+        gap: 50px;
+        @include tablet {
+          gap: 10px;
+        }
+        @include mobile {
+          flex-direction: column;
+        }
+        .like {
+          flex: 0.5;
+          @include flex-layout(column,center, flex-start);
+          gap: 20px;
+          height: 100%;
+          @include tablet {
+            width: 80%;
+            gap: 10px;
+          }
+          p {
+            color: #6f5346;
+            font-size: 32px;
+            font-weight: 900;
+          }
+          .item-wrap {
+            @include flex-layout(row, space-between);
+            gap: 20px;
+            height: 100%;
+            .item {
+              @include flex-layout(column, space-between);
+              height: 100px;
+              svg {
+                color: #75ab64;
+                font-size: 4rem;
+              }
+              &:nth-child(3) svg {
+                margin-top: 0.2rem;
+                font-size: 3.5rem;
+              }
+              p {
+                font-size: 20px;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+        .exp {
+          color: #6f5346;
+          font-size: 32px;
+          font-weight: 900;
+          flex: 1;
+          @include flex-layout(column,center, flex-start);
+          gap: 20px;
+          width: 100%;
+          @include tablet{
+            gap: 10px;
+          }
+          .item-wrap {
+            width: 100%;
+            .item {
+              width: 100%;
+              @include flex-layout(row, space-between);
+              p {
+                font-size: 20px;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

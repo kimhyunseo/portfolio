@@ -1,0 +1,71 @@
+@mixin tablet {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+
+// 3. 모바일 (더 작아질 때)
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+//플렉스
+@mixin flex-layout($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// //폰트 믹스인(사이즈, 굵기)
+// @mixin font-h1 {
+//   font-size: 3.2rem;
+//   font-weight: 700;
+//   @include mobile {
+//     font-size: 2.4rem;
+//   }
+// }
+// @mixin font-h2 {
+//   font-size: 2.4rem;
+//   font-weight: 600;
+//   @include mobile {
+//     font-size: 2rem;
+//   }
+// }
+// @mixin font-h3 {
+//   font-size: 2rem;
+//   font-weight: 600;
+//   @include mobile {
+//     font-size: 1.8rem;
+//   }
+// }
+// @mixin font-body {
+//   font-size: 1.6rem;
+//   font-weight: 400;
+//   @include mobile {
+//     font-size: 1.4rem;
+//   }
+// }
+// @mixin font-body-bold {
+//   font-size: 1.6rem;
+//   font-weight: 600;
+//   @include mobile {
+//     font-size: 1.4rem;
+//   }
+// }
+// @mixin font-caption {
+//   font-size: 1.4rem;
+//   font-weight: 400;
+//   @include mobile {
+//     font-size: 1.2rem;
+//   }
+// }
+// @mixin font-overline {
+//   font-size: 1rem;
+//   font-weight: 400;
+//   @include mobile {
+//     font-size: 0.9rem;
+//   }
+// }
