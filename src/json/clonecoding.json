@@ -1,0 +1,22 @@
+[
+  {
+    "title": "NETFLIX",
+    "description": "React 라이브러리 활용, 오픈 API 활용",
+    "image": "cl1.png"
+  },
+  {
+    "title": "MOMENTUM",
+    "description": "로컬 스토리지 활용",
+    "image": "cl2.png"
+  },
+  {
+    "title": "AIRBNB",
+    "description": "반응형 ui, flex와 grid 활용",
+    "image": "cl3.png"
+  },
+  {
+    "title": "TESLA",
+    "description": "반응형 ui, flex 활용",
+    "image": "cl4.png"
+  }
+]
