@@ -1,0 +1,75 @@
+.practical {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  @include flex-layout(column, space-around);
+  margin: 2rem 0;
+  .title {
+    width: 100%;
+    max-height: 180px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 20px;
+    @include flex-layout();
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 820px;
+    }
+  }
+  .item-wrap {
+    gap: 20px;
+    width: 90%;
+    @include flex-layout(row, center, flex-start);
+    .item {
+      @include flex-layout(column);
+      gap: 20px;
+      width: 100%;
+      flex: 1;
+      transition: all 0.3s ease;
+      &:hover{
+        flex: 1.5;
+      }
+      .top {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        overflow: hidden;
+        position: relative;
+        max-height: 600px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+        .txt-wrap {
+          position: absolute;
+          background-color: #fff;
+          width: 100%;
+          padding: 1rem;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+          @include flex-layout(row, space-between);
+          p {
+            color: #6f5346;
+            font-size: 32px;
+            font-weight: 800;
+          }
+          ul {
+            @include flex-layout(row);
+          }
+        }
+      }
+      .bottom{
+        p{
+          color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            word-break: keep-all;
+        }
+      }
+    }
+  }
+}
