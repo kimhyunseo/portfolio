@@ -9,6 +9,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
+    padding: 0 2rem;
     @include flex-layout();
     img{
       width: 100%;
@@ -35,7 +36,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       &:hover{
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
       }
       @include tablet{
         flex-direction: column;
