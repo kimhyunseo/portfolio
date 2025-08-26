@@ -48,14 +48,14 @@ const BoardGame = () => {
                 <a href={url} target="_blank" rel="noopener noreferrer">
                   <p>{title}</p>
                   <div className="img-wrap">
-                    <img src={`../images/${image}.png`} alt={title} />
+                    <img src={`${process.env.PUBLIC_URL}/images/${image}.png`} alt={title} />
                   </div>
                 </a>
 
                 <ul className="icons">
                   {icons.map((icon, i) => (
                     <li key={i}>
-                      <img src={`../images/${icon}`} alt={`${title} icon ${i}`} />
+                      <img src={`${process.env.PUBLIC_URL}/images/${icon}`} alt={`${title} icon ${i}`} />
                     </li>
                   ))}
                 </ul>

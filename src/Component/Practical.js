@@ -57,7 +57,7 @@ const Practical = () => {
                     })}
                   </ul>
                 </div>
-                <img src={`../images/${image}`} alt={title} />
+                <img src={`${process.env.PUBLIC_URL}/images/${image}`} alt={title} />
               </div>
               <div className='bottom'>
                 <p>{description}</p>

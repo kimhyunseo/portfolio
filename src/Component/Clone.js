@@ -87,7 +87,7 @@ const Clone = () => {
             ref={(el) => (infoRefs.current[idx] = el)}
             onClick={() => setSelectedProject(data[idx])}
           >
-            <img src={`../images/${cover_img}`} alt={title} />
+            <img src={`${process.env.PUBLIC_URL}/images/${cover_img}`} alt={title} />
             <div className="txt-wrap">
               <div className="left">
                 <p>0{idx + 1}</p>
