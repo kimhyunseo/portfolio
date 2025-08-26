@@ -164,7 +164,7 @@ const Clone = () => {
             </div>
             <div className="right">
               <div className="img-wrap">
-                <img src={`../images/${selectedProject.img}.png`} alt={selectedProject.title} />
+                <img src={`${process.env.PUBLIC_URL}/images/${selectedProject.img}`} alt={selectedProject.title} />
               </div>
 
             </div>

@@ -38,6 +38,8 @@
       width: 90%;
     }
     .item {
+      width: 100%;
+      height: 100%;
       position: relative;
       cursor: pointer;
       overflow: hidden;
@@ -46,6 +48,7 @@
 
       img {
         transition: all 0.3s ease;
+        top: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -58,7 +61,7 @@
       .txt-wrap {
         width: 100%;
         position: absolute;
-        top: 10px;
+        top: 5%;
         left: 50%;
         transform: translateX(-50%);
         @include flex-layout();
