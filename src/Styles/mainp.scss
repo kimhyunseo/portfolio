@@ -2,91 +2,109 @@
   width: 100%;
   min-height: 100vh;
   height: auto;
-  @include flex-layout(column, space-around);
-  margin: 2rem 0;
+  @include flex-layout(column);
+  margin: 10rem 0;
   .title {
     width: 100%;
     display: block;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding: 0 2rem;
+    margin-bottom: 5rem;
     @include flex-layout();
-    img{
-      width: 100%;
-      height: auto;
-      max-width: 1000px;
+    @include tablet {
+      margin-bottom: 3rem;
+    }
+    img {
+      width: auto;
+      height: 100%;
+      max-height: 100px;
+      @include mobile {
+        max-height: 80px;
+      }
     }
   }
   .item-wrap {
-    width: 90%;
+    width: 80%;
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    @include mobile{
+
+    gap: 2rem;
+    @include tablet{
+      gap: 1rem;
+      width: 90%;
+    }
+    @include mobile {
       grid-template-columns: repeat(1, 1fr);
-      width: 95%;
+      width: 90%;
     }
     .item {
-      @include flex-layout(row, space-between,stretch);
+      width: 100%;
+      height: 100%;
       background-color: #fff;
-      border-radius: 24px;
-      padding: 20px;
-      gap: 20px;
+      border-radius: 2rem;
+      padding: 1rem;
+      gap: 1rem;
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       cursor: pointer;
       transition: all 0.3s ease;
-      &:hover{
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+      &:hover {
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        img {
+          transform: scale(1.1);
+        }
       }
-      @include tablet{
+      @include tablet {
+        display: flex;
         flex-direction: column;
         align-items: center;
       }
       .left {
+        width: 100%;
+        height: 100%;
         flex: 1;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        @include tablet{
-          align-items:center;
+        border-radius: 1rem;
+        overflow: hidden;
+        object-position: center;
+        @include flex-layout(row, flex-start, flex-start);
+        @include tablet {
+          align-items: center;
           justify-content: center;
         }
         img {
           width: 100%;
-          height: auto;
+          height: 100%;
           object-fit: cover;
-          
+          transition: all 0.3s ease;
         }
       }
       .right {
-        flex: 1;
         @include flex-layout(column, space-between);
+        flex: 1;
+        @include mobile{
+          flex: 0.5;
+        }
         .txt-wrap {
           p {
             color: #6f5346;
-            font-size: 32px;
-            font-weight: 800;
-            @include tablet{
-              font-size: 28px;
-            }
+            @include font-style(h4);
             &:nth-child(2) {
-              font-size: 24px;
-              font-weight: 600;
-              @include tablet{
-              font-size: 20px;
-            }
+              @include font-style(body);
             }
           }
         }
 
         .icon-list {
-          @include flex-layout(row, flex-end);
+          @include flex-layout(row, flex-end, right);
           width: 100%;
-          gap: 0.5rem;
           flex-wrap: wrap;
-          @include tablet{
+          svg {
+            width: 80%;
+          }
+          @include tablet {
             justify-content: center;
-
           }
         }
       }

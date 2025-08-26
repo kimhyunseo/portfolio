@@ -1,0 +1,145 @@
+// SCSS 변수 정의 (선택사항)
+$glass-bg: rgba(255, 255, 255, 0.2);
+$glass-border: rgba(255, 255, 255, 0.5);
+$glass-blur: 16px;
+$shadow-color: rgba(0, 0, 0, 0.05);
+
+.menu-bar {
+  @include flex-layout();
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  gap: 0.5rem;
+  width: fit-content;
+
+  // 데스크톱 메뉴바의 글라스모피즘 스타일
+  @include glass();
+  padding: 0.5rem 1rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s ease;
+
+  @include tablet {
+    // 태블릿에서는 메뉴가 닫힌 상태를 기본으로 함
+    left: 0.5rem;
+    transform: translateX(0);
+    // 닫힌 상태에서는 스타일을 최소화
+    background-color: transparent;
+    backdrop-filter: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  // 열고 닫는 버튼
+  .menu-toggle-button {
+    cursor: pointer;
+    @include glass();
+    padding: 0.3rem 0.4rem;
+    aspect-ratio: 1/1;
+    border: none;
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    svg {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 16px $shadow-color;
+    }
+  }
+
+  // 메뉴 리스트
+  .menu-list {
+    // 리스트 내 버튼
+    button {
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 2.5rem;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(16px);
+      background-color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  // 태블릿에서 메뉴가 열린 상태
+  @include tablet {
+    &.open {
+      @include glass();
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+      .menu-list {
+        @include flex-layout();
+        gap: 0.5rem;
+        button {
+          @include font-style(body);
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          background-color: transparent;
+          background-color: rgba(255, 255, 255, 0.7);
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+          }
+          &.home {
+            @include flex-layout();
+            padding: 0.55rem 0.7rem;
+            background-color: #75ab64;
+            svg {
+              font-size: 1.3rem;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.desktop-menu {
+  button {
+    cursor: pointer;
+    @include font-style(body);
+    @include glass();
+    padding: 0.5rem 1rem;
+    aspect-ratio: 1/1;
+    border: none;
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+  .home {
+    @include flex-layout();
+    padding: 0.3rem 0.5rem;
+    background-color: #75ab64;
+    svg {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  }
+}

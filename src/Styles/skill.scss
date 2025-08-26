@@ -2,68 +2,67 @@
   width: 100%;
   min-height: 100vh;
   height: auto;
-  @include flex-layout(column, space-around);
-  margin: 2rem 0;
+  @include flex-layout(column);
+  margin: 10rem 0;
   .title {
     width: 100%;
     display: block;
     margin: 0 auto;
     padding: 0 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 5rem;
     @include flex-layout();
+    @include tablet {
+      margin-bottom: 3rem;
+    }
     img{
-      width: 100%;
-      height: auto;
-      max-width: 1000px;
+      width: auto;
+      height: 100%;
+      max-height: 100px;
+      @include mobile{
+        max-height: 80px;
+      }
     }
   }
   .item-wrap {
     width: 80%;
     display: block;
     max-width: 1600px;
-    min-height: 700px;
+    min-height: 600px;
     margin: 0 auto;
     padding: 2rem;
     border-radius: 2rem;
     background-color: rgba($color: #ffffff, $alpha: 0.9);
     border: 15px solid #dbba85;
     box-shadow: 0 15px 0 #897047;
-    gap: 6%;
     opacity: 1;
-    @include flex-layout(row, center, stretch);
+    gap: 3rem 0;
+    @include flex-layout(row, space-between);
     @include tablet {
       flex-direction: column;
       padding: 1rem;
-      width: 95%;
+      width: 90%;
       align-items: center;
-      top: 85%;
-    }
-    @include mobile {
-      top: 85%;
-
     }
     .left {
-      @include flex-layout(column,space-between);
-      @include tablet{
-          flex-direction: row;
-          gap: 20px;
-        }
+      @include flex-layout(column);
+      width: 100%;
+      gap: 1rem;
+      @include mobile {
+        flex-direction: row;
+      }
       .bubble {
         background-color: #fff;
         width: fit-content;
         padding: 20px 40px;
         border-radius: 5rem;
         position: relative;
-        
+
         p {
+          @include font-style(h3);
           font-family: "Ownglyph_ParkDaHyun";
-          font-size: 45px;
           color: #6f5346;
           text-align: center;
           word-break: keep-all;
-          @include tablet {
-            font-size: 30px;
-          }
         }
         &::after {
           content: "";
@@ -77,45 +76,64 @@
           border-bottom: 0;
           margin-left: -15px;
           margin-bottom: -15px;
-          @include tablet {
-            display: none;
+          z-index: 100;
+          @include mobile {
+            left: auto; // left 제거
+            right: -12px; // 말풍선 밖으로 튀어나오게
+            bottom: 50%; // 말풍선 높이에 맞게 조정
+            border-top-color: transparent; // 기존 위쪽 색 제거
+            border-bottom-color: transparent;
+            border-left: 15px solid #fff; // 오른쪽으로 튀어나온 삼각형
+            border-right: 0;
+            margin-left: 0;
+            margin-right: 0;
           }
         }
       }
       .character {
-      width: 100%;
-      max-width: 700px;
-      @include tablet{
-        max-width: 300px;
-      }
-      @include mobile{
-        max-width: 280px;
-      }
-      img {
         width: 100%;
+        max-width: 350px;
+        @include tablet {
+          max-width: 250px;
+        }
+        @include mobile {
+          max-width: 350px;
+        }
+        img {
+          width: 100%;
+        }
       }
-    }
     }
     .right {
+      @include flex-layout(column);
+      width: 100%;
+      height: 100%;
+      margin: auto;
       .icon-list {
+        width: 100%;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        flex: 1;
+        justify-content: center; // 가로 중앙
+        align-content: center; // 세로 중앙
+        gap: 1rem;
         .icon-item {
           @include flex-layout(column);
+          gap: 0.5rem;
 
           svg {
-            width: 170px;
-            height: 170px;
-            @include tablet{
-              width: 100px;
-              height: 100px;
+            width: 60%;
+            height: auto;
+            @include tablet {
+              width: 50%;
+            }
+            @include mobile {
+              width: 70%;
             }
           }
 
           p {
-            font-size: 24px;
+            @include font-style(body);
             font-weight: 700;
             color: #6f5346;
             text-align: center;

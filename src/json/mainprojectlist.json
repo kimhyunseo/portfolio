@@ -1,35 +1,41 @@
 [
   {
+    "id": 1,
     "title": "DreamLand Parking",
     "description": "주차 현황과 주차 예약, 취소 기능을 구현한 React와 Supabase 기반의 주차장 관리 서비스입니다.",
     "icons": ["Figma", "Ai", "Ps", "React", "Scss","Supabase", "Git", "GitHub"],
     "image": "mp1.png"
   },
   {
+    "id": 2,
     "title": "Ririm",
     "description": "JSON 데이터를 활용해 상품 목록, 상세 페이지, 장바구니 기능을 구현한 React 쇼핑몰 사이트입니다.",
     "icons": ["Figma", "Ps", "React", "Scss", "Git", "GitHub"],
     "image": "mp2.png"
   },
   {
+    "id": 3,
     "title": "적어봐요 끝말잇기의 숲",
     "description": "우리말샘 API를 활용해 끝말잇기를 할 수 있는 모바일 전용 React 게임 사이트 입니다.",
     "icons": ["Ai", "Ps", "React", "Scss"],
     "image": "mp3.png"
   },
   {
+    "id": 4,
     "title": "야구 Quiz",
     "description": "JSON과 상태 관리로 정답 체크 및 점수 계산이 가능한 React 기반 모바일 퀴즈 앱입니다.",
     "icons": ["Figma", "Ai", "Ps", "React", "Scss"],
     "image": "mp4.png"
   },
   {
+    "id": 5,
     "title": "Neon Blaze",
     "description": "야구 구단 소개 페이지를 HTML/CSS로 직접 기획하고 퍼블리싱한 정적 콘텐츠 웹사이트입니다.",
     "icons": ["Figma", "Ai", "Ps", "HTML", "CSS"],
     "image": "mp5.png"
   },
   {
+    "id": 6,
     "title": "하루1루",
     "description": "사용자 리서치부터 와이어프레임, UI 설계, 프로토타입까지 제작한 Figma 기반 UX/UI 프로젝트입니다.",
     "icons": ["Figma"],

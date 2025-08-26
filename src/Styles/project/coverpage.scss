@@ -1,0 +1,142 @@
+.project-cover {
+  @include flex-layout(row, flex-start);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .left {
+    @include flex-layout(column, space-between, flex-start);
+    @include glass();
+    position: relative;
+    flex: 0.25; // 비율로 조정
+    min-width: 600px;  // 너무 작아지지 않게
+    z-index: 1;
+    height: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    top: 0;
+    left: 0;
+    @include mobile {
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+    }
+    .top {
+      width: 100%;
+      .img-wrap {
+        margin-bottom: 3rem;
+        width: 200px;
+        height: auto;
+        @include mobile{
+          margin-top: 5rem;
+        }
+        img {
+          width: 100%;
+          margin: 0 1rem;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      p {
+        @include font-style(body);
+        font-weight: 900;
+        word-break: keep-all;
+      }
+      .project-container {
+        @include flex-layout(column, flex-start, flex-start);
+        gap: 0.5rem;
+        margin: 1rem 0;
+        .project-item {
+          @include flex-layout(row, flex-start, flex-start);
+          gap: 10px;
+          span {
+            @include font-style(body);
+            &:nth-child(1) {
+              font-weight: 700;
+              width: 100px;
+            }
+            &:nth-child(2) {
+              text-align: left;
+            }
+          }
+          ul {
+            li {
+              @include font-style(body);
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      .icon-list {
+        @include flex-layout(row, flex-start);
+        gap: 0.5rem;
+      }
+      .libraries {
+        @include flex-layout(row, flex-start);
+        gap: 0.5rem;
+        li {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .middle{
+    @include flex-layout();
+    display: none;
+    width: 100%;
+    height: auto;
+    @include mobile{
+      display: flex;
+    }
+    .img-wrap{
+      width: 100%;
+      height: auto;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .right {
+    position: absolute;
+    flex: 0.5;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    .img-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+    .btn-wrap {
+      position: absolute;
+      @include flex-layout();
+      right: 2rem;
+      top: 2rem;
+      gap: 1rem;
+      z-index: 100;
+      @include mobile{
+        top: 1rem;
+        right: 1rem;
+      }
+      a {
+        @include font-style(h4);
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+      }
+    }
+}

@@ -17,7 +17,7 @@ const BackgroundAnimation = () => {
       const dust = Array.from({ length: 50 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: 2 + Math.random() * 3,
+        size: 1 + Math.random() * 3,
         speedY: 0.2 + Math.random() * 0.3,
         color: "rgba(255,255,255,0.2)",
       }));

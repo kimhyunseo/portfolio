@@ -13,7 +13,7 @@
     transform: translateX(-50%);
     color: #ffffff;
     z-index: 100;
-    text-shadow: 0 0px 30px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
     max-width: 1024px; /* 최대 너비를 1024px로 설정 */
     width: 90%; /* 화면이 작아질 때 유동적으로 너비가 줄어들도록 % 단위 사용 */
 
@@ -26,14 +26,14 @@
 
       .left-text,
       .right-text {
-        font-size: clamp(16px, 2vw, 30px);
-        font-weight: 700;
+        @include font-style(h4);
+        font-family: "Ownglyph_ParkDaHyun", sans-serif;
       }
 
       .divider {
         flex-grow: 1;
         border: none;
-        border-top: 1px solid white;
+        border-top: 1.5px solid white;
         margin: 0 1rem;
       }
     }
@@ -100,11 +100,12 @@
 
   .scroll-down {
   position: absolute;
+  @include font-style(h4);
+  font-family: "Ownglyph_ParkDaHyun", sans-serif;
   right: 2rem;
   bottom: 2rem;
   @include flex-layout(column);
   color: #ffffff;
-  font-size: 24px;
   font-weight: 700;
   z-index: 1000;
   background-color: #6F5346;
