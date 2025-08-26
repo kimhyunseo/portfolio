@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { ReactComponent as Dubble } from "../svg/dubble.svg";
 
 import { FaBook } from "react-icons/fa";
 import { IoIosBaseball } from "react-icons/io";
@@ -25,33 +24,31 @@ const AboutMe = () => {
     // 타이틀 등장
     tl.fromTo(
       titleRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+      { clipPath: "inset(0 100% 0 0)" },
+      { clipPath: "inset(0 0% 0 0)", duration: 1.3, ease: "power3.out" }
     )
-    // info-wrap 등장
-    .fromTo(
-      infoRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 },
-      "-=0.4" // 타이틀 끝나기 전 조금 겹치게 시작
-    );
+      // info-wrap 등장
+      .fromTo(
+        infoRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 },
+        "-=0.6" // 타이틀 끝나기 전 조금 겹치게 시작
+      );
   }, []);
 
   return (
     <div className='aboutme'>
       <div className='title' ref={titleRef}>
-        <img src={`${process.env.PUBLIC_URL}/images/aboutme.png`}/>
+        <img src={`${process.env.PUBLIC_URL}/images/aboutme.png`} />
       </div>
       <div className="info-wrap" ref={infoRef}>
         <div className="character">
-          <img src={`${process.env.PUBLIC_URL}/images/character.png`} alt="고양이"/>
+          <img src={`${process.env.PUBLIC_URL}/images/character.png`} alt="고양이" />
         </div>
         <div className="right">
           <div className="top">
             <div className="bubble">
-              <Dubble />
               <p>멈추지 않는 탐험가</p>
-              <Dubble />
             </div>
 
             <p>새로운 것에 대한 <span>호기심</span>이 많아 항상 배우고 <span>도전</span>하는 사람입니다. 사용자의 입장에서 문제를 살피고 실용적이고 효과적인 해결책을 만드는 데 집중합니다. 혼자보다는 함께 <span>협업</span>하며 서로의

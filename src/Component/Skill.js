@@ -33,17 +33,17 @@ const Skill = () => {
     });
 
     // 타이틀 등장
-    tl.fromTo(
+        tl.fromTo(
       titleRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+      { clipPath: "inset(0 100% 0 0)" },
+      { clipPath: "inset(0 0% 0 0)", duration: 1.3, ease: "power3.out" }
     )
     // info-wrap 등장
     .fromTo(
       infoRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 },
-      "-=0.4" // 타이틀 끝나기 전 조금 겹치게 시작
+      "-=0.6" // 타이틀 끝나기 전 조금 겹치게 시작
     )
     .fromTo(
       bubbleRef.current,

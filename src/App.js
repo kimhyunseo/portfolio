@@ -1,13 +1,17 @@
 import "./App.scss";
-import { HashRouter} from "react-router-dom";
+import { HashRouter, Routes, Route} from "react-router-dom";
 import MainPage from './Component/MainPage';
+import ProjectPage from './Component/ProjectPage';
 
 const App = () => {
   return (
     <HashRouter>
     <div id="app">
-      <MainPage/>
-    </div>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+        </Routes>
+      </div>
     </HashRouter>
   );
 };
