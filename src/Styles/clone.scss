@@ -1,0 +1,228 @@
+.clone {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  @include flex-layout(column);
+  margin: 10rem 0;
+  .title {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+    @include flex-layout();
+    @include tablet {
+      margin-bottom: 3rem;
+    }
+    img {
+      width: auto;
+      height: 100%;
+      max-height: 100px;
+      @include mobile {
+        max-height: 80px;
+      }
+    }
+  }
+  .item-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 80%;
+    height: 100%;
+    @include tablet {
+      transform: translateX(0);
+      width: 90%;
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      width: 90%;
+    }
+    .item {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 30px;
+      flex: 1;
+
+      img {
+        transition: all 0.3s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .txt-wrap {
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flex-layout();
+        color: #fff;
+        z-index: 10;
+        gap: 1rem;
+        text-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.5);
+
+        .left {
+          p {
+            font-weight: 900;
+            font-size: 5em;
+          }
+        }
+        .right {
+          p {
+            @include font-style(h2);
+            &:nth-child(2) {
+              @include font-style(h4);
+            }
+          }
+        }
+      }
+    }
+  }
+  // 팝업
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); // 반투명 검정
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; // 최상단
+
+    .popup-content {
+      position: relative;
+      @include flex-layout();
+      width: 90%;
+      height: 90%;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+      @include tablet{
+        
+      }
+      @include mobile{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+      }
+
+      .left {
+      width: 100%;
+      height: 100%;
+      flex: 0.8;
+      @include flex-layout(column, space-between, flex-start);
+      padding: 2rem;
+      .top {
+        width: 100%;
+        
+        .title-wrap {
+          width: 100%;
+          @include flex-layout(row, flex-start, flex-end);
+          gap: 1rem;
+          margin-bottom: 1rem;
+          h2 {
+            @include font-style(h1);
+          }
+          p {
+            margin-bottom: 0.3rem;
+          }
+        }
+        p {
+          @include font-style(body);
+          font-weight: 900;
+          word-break: keep-all;
+        }
+        .project-container {
+          @include flex-layout(column, flex-start, flex-start);
+          gap: 0.5rem;
+          margin: 1rem 0;
+          .project-item {
+            @include flex-layout(row, flex-start, flex-start);
+            gap: 10px;
+            span {
+              @include font-style(body);
+              &:nth-child(1) {
+                font-weight: 700;
+                width: 100px;
+              }
+              &:nth-child(2) {
+                text-align: left;
+              }
+            }
+            ul {
+              li {
+                @include font-style(body);
+              }
+            }
+          }
+        }
+      }
+      .bottom {
+        .icon-list {
+          @include flex-layout(row, flex-start);
+          gap: 0.5rem;
+        }
+        .libs {
+          @include flex-layout(row, flex-start);
+          gap: 0.5rem;
+          li {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      .img-wrap {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    }
+    
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .btn-wrap {
+      position: absolute;
+      @include flex-layout();
+      right: 1rem;
+      bottom: 1rem;
+      gap: 1rem;
+      z-index: 100;
+      a {
+        @include font-style(h4);
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}

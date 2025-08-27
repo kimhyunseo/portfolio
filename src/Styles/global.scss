@@ -1,0 +1,42 @@
+//global.scss
+@import "./reset.scss";
+@import "./mixin.scss";
+
+
+//font
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+// font-family: 'Pretendard Variable', sans-serif; (100~900 굵기 지원)
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gowun+Batang:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Pretendard Variable', sans-serif;
+    
+}
+.chelsea-market-regular {
+  font-family: "Chelsea Market", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gowun-batang-regular {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes bgShift {
+  0% { background-color: #325029; }
+  50% { background-color: #3b5a2f; }
+  100% { background-color: #325029; }
+}
