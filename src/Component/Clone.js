@@ -35,7 +35,7 @@ const Clone = () => {
     tl.fromTo(
       infoRefs.current,
       {
-        x: (i) => (i < 2 ? 90 : -90), // 0,1 -> 오른쪽 / 2,3 -> 왼쪽
+        x: (i) => (i < 2 ? 90 : -90), 
         opacity: 0
       },
       {
@@ -164,7 +164,7 @@ const Clone = () => {
             </div>
             <div className="right">
               <div className="img-wrap">
-                <img src={`../images/${selectedProject.img}.png`} alt={selectedProject.title} />
+                <img src={`${process.env.PUBLIC_URL}/images/${selectedProject.img}.png`} alt={selectedProject.title} />
               </div>
 
             </div>

@@ -116,6 +116,9 @@
       @include tablet{
         width: 80%;
       }
+      @include mobile{
+        width: 50%;
+      }
     }
   }
 }

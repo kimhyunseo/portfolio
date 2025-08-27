@@ -13,10 +13,10 @@
     transform: translateX(-50%);
     color: #ffffff;
     z-index: 100;
-    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0px 30px rgba(0, 0, 0, 0.3);
     max-width: 1024px; /* 최대 너비를 1024px로 설정 */
     width: 90%; /* 화면이 작아질 때 유동적으로 너비가 줄어들도록 % 단위 사용 */
-
+    
     .title-top {
       @include flex-layout(row, space-between);
       gap: 1rem;
@@ -45,10 +45,11 @@
       @include flex-layout();
       span {
         display: inline-block; // 글자별 애니메이션 위해
-        font-size: clamp(40px, 10vw, 200px);
+        font-size: clamp(20px, 10vw, 180px);
         opacity: 0;
         transform: translateY(50px) scale(0.5); /* GSAP y: 0, scale: 1로 돌아갈 위치와 일치하도록 */
         margin: 10px;
+
       }
     }
   }
@@ -112,9 +113,19 @@
   border-radius: 50%;
   width: 7rem;
   height: 7rem;
+  @include tablet{
+    width: 5rem;
+    height: 5rem;
+    font-size: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
   .scroll-down-icon {
     font-size: 2rem; // 아이콘 크기
     margin-top: 0.3rem;
+    @include tablet{
+      font-size: 1.5rem;
+    }
   }
 }
 
