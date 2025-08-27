@@ -1,0 +1,124 @@
+.map-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  @include flex-layout();
+  .map {
+    width: 80%;
+    max-width: 1500px;
+    @include tablet{
+      width: 90%;
+    }
+    @include mobile{
+      width: 95%;
+    }
+    .map-image {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .hover-area {
+    position: absolute;
+    width: 5%;
+    height: auto; /* 높이는 자동으로 비율 유지 */
+    aspect-ratio: 1 / 1; /* 정사각형 비율 */
+    max-width: 70px;
+    max-height: 70px;
+    background: rgba(255, 0, 0, 0.2); // 테스트용, 실제는 투명해도 됨
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 0, 0, 0.4);
+    }
+  }
+  .map-info {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-family: "Chelsea Market", sans-serif;
+    border: 15px solid #dbba85;
+    box-shadow: 0 15px 0 #897047;
+
+    &.active {
+      opacity: 1;
+    }
+
+    h2 {
+      @include font-style(h2);
+      font-family: "Chelsea Market", sans-serif;
+      margin-bottom: 0.5rem;
+      color: #6f5346;
+      transition: all 0.3s ease;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      transition: all 0.3s ease;
+
+      li {
+        @include font-style(body);
+        font-family: "Chelsea Market", sans-serif;
+        margin-bottom: 0.3rem;
+        color: #9f806b;
+      }
+    }
+  }
+  .cat {
+    @include flex-layout(column);
+    position: absolute;
+    height: auto;
+    max-width: 300px;
+    bottom: 1rem;
+    right: 2rem;
+    gap: 1rem;
+    @include tablet {
+      flex-direction: row;
+      right: 10%;
+    }
+    p {
+      position: relative;
+      @include font-style(h3);
+      font-family: "Ownglyph_ParkDaHyun", sans-serif;
+      color: #6f5346;
+      text-align: center;
+      background-color: #fff;
+      padding: 15px 30px;
+      border-radius: 5rem;
+      word-break: keep-all;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -25%; // 말풍선 위쪽에 꼬리
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent; // 꼬리 색상 }
+        @include tablet{
+          opacity: 0;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      @include tablet{
+        width: 80%;
+      }
+      @include mobile{
+        width: 50%;
+      }
+    }
+  }
+}

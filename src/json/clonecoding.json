@@ -1,0 +1,143 @@
+[
+  {
+    "id": 1,
+    "title": "Netflix",
+    "bg": "#000000",
+    "color": "#F7F7F7",
+    "cover_img": "cl1.png",
+    "cover_description": "React 라이브러리 활용, 오픈 API 활용",
+    "img": "cl1-1",
+    "url": "www.netflix.com",
+    "description": "실제 넷플릭스처럼 사용자가 인기 영화와 TV 프로그램을 확인하고 클릭하면 상세 정보를 볼 수 있도록 구현한 클론 사이트입니다. React를 기반으로 개발했으며, 오픈 API를 연동해 실시간 콘텐츠 데이터를 불러오는 것을 목표로 했습니다.",
+    "date": "약 3일",
+    "ui_design": "기존 Netflix 레이아웃을 참고하여 바로 코드로 구현",
+    "layout": "Flex 기반으로 카드 형태의 레이아웃 제작",
+    "type": "100% Personal Project",
+    "icons": [
+      "React",
+      "Scss"
+    ],
+    "libraries": [
+      "TMDB API",
+      "React-router",
+      "React-icons",
+      "React-slick"
+    ],
+    "btnwrap": [
+      {
+        "text": "GITHUB URL",
+        "link": "https://github.com/kimhyunseo/dotflix",
+        "background": "#FFFFFF",
+        "color": "#000000"
+      },
+      {
+        "text": "SITE URL",
+        "link": "https://kimhyunseo.github.io/dotflix/",
+        "background": "#FFFFFF",
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Momentum",
+    "bg": "#91A6C3",
+    "color": "#2C2C2C",
+    "cover_img": "cl2.png",
+    "cover_description": "로컬 스토리지 활용",
+    "img": "cl2-1",
+    "description": "MOMENTUM 클론 프로젝트는 로컬 스토리지를 활용한 데이터 저장과 테마 변경 기능에 중점을 두었습니다. 사용자의 이름, 할 일 목록, 선택한 테마를 저장해 새로고침 후에도 유지되도록 했고, 4가지 테마를 통해 다양한 분위기의 화면 구성을 구현했습니다.",
+    "date": "약 3일",
+    "ui_design": "기존 Momentum 레이아웃을 참고하여 바로 코드로 구현",
+    "layout": "Flex 기반으로 카드 형태의 레이아웃 제작",
+    "type": "100% Personal Project",
+    "icons": [
+      "React",
+      "Scss"
+    ],
+    "libraries": [
+      "React-router",
+      "React-calendar"
+    ],
+    "btnwrap": [
+      {
+        "text": "GITHUB URL",
+        "link": "https://github.com/kimhyunseo/myday",
+        "background": "#94AEC7",
+        "color": "#2C2C2C"
+      },
+      {
+        "text": "SITE URL",
+        "link": "https://kimhyunseo.github.io/myday",
+        "background": "#94AEC7",
+        "color": "#2C2C2C"
+      }
+    ]
+  },
+   {
+    "id": 3,
+    "title": "Airbnb",
+    "bg": "#EEEEEE",
+    "color": "#222222",
+    "cover_img": "cl3.png",
+    "cover_description": "반응형 ui, flex와 grid 활용",
+    "img": "cl3-1",
+    "url": "www.airbnb.co.kr",
+    "description": "Airbnb 클론 프로젝트는 반응형 UI 구현과 Flex/Grid 레이아웃 활용에 중점을 두었습니다. 다양한 화면 크기에 따라 자연스럽게 변화하는 레이아웃을 구현하면서 Flex와 Grid를 실무처럼 다뤄보는 데 목적을 두었습니다.",
+    "date": "약 2일",
+    "ui_design": "기존 Airbnb 레이아웃을 참고하여 바로 코드로 구현",
+    "layout": "Flex, Grid 기반으로 카드 형태의 레이아웃 제작",
+    "type": "100% Personal Project",
+    "icons": [
+      "Html",
+      "Css"
+    ],
+    "btnwrap": [
+      {
+        "text": "GITHUB URL",
+        "link": "https://github.com/kimhyunseo/kimhyunseo.github.io/tree/main/aribnb",
+        "background": "#FF385C",
+        "color": "#EEEEEE"
+      },
+      {
+        "text": "SITE URL",
+        "link": "https://kimhyunseo.github.io/aribnb/index.html",
+        "background": "#FF385C",
+        "color": "#EEEEEE"
+      }
+    ]
+  },
+   {
+    "id": 4,
+    "title": "Tesla",
+    "bg": "#3C4556",
+    "color": "#FFFFFF",
+    "cover_img": "cl4.png",
+    "cover_description": "반응형 ui, flex 활용",
+    "img": "cl4-1",
+    "url": "www.tesla.com",
+    "description": "테슬라 클론 프로젝트는 반응형 디자인 구현과 영상 및 이미지 삽입 연습에 집중했습니다. Flex를 활용해 다양한 화면 크기에 대응하는 레이아웃을 설계했고, 시각적 요소를 효과적으로 배치하는 데 중점을 두었습니다.",
+    "date": "약 2일",
+    "ui_design": "기존 Airbnb 레이아웃을 참고하여 바로 코드로 구현",
+    "layout": "Flex, Grid 기반으로 카드 형태의 레이아웃 제작",
+    "type": "100% Personal Project",
+    "icons": [
+      "Html",
+      "Css"
+    ],
+    "btnwrap": [
+      {
+        "text": "GITHUB URL",
+        "link": "https://github.com/kimhyunseo/kimhyunseo.github.io/tree/main/tesla",
+        "background": "#3E6AE1",
+        "color": "#FFFFFF"
+      },
+      {
+        "text": "SITE URL",
+        "link": "https://kimhyunseo.github.io/tesla/index.html",
+        "background": "#3E6AE1",
+        "color": "#FFFFFF"
+      }
+    ]
+  }
+]
