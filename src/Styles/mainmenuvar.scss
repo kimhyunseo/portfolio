@@ -1,0 +1,53 @@
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  transition: all 0.3s ease;
+  ul {
+    @include flex-layout();
+    gap: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    a {
+      @include flex-layout();
+      width: 100%;
+      height: 100%;
+    }
+    li {
+      cursor: pointer;
+      @include font-style(body);
+      color: #6f5346;
+      text-align: center;
+      word-break: keep-all;
+      white-space: nowrap;
+      &:nth-child(1) {
+        width: 35px;
+        height: 35px;
+        aspect-ratio: 1/1;
+        background-color: #6f5346;
+        color: #fff;
+        border-radius: 50%;
+      }
+      border-bottom: 2px solid transparent; // 기본 투명
+      transition: border-color 0.3s ease;
+      &:hover {
+        border-bottom: 2px solid #6f5346; // hover 시 보더
+      }
+    }
+  }
+}
+
+.navbar.hidden {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}
+
+.navbar.visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
